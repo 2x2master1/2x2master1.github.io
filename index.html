@@ -10,7 +10,7 @@
 
 <body>
 	<input type="text" name="snowflakeField" id="snowflakeField" autofocus="autofocus">
-	<label for="snowflakeField">Snowflake</label>
+	<label for="snowflakeField">Discord Snowflake</label>
 	<br /><br />
 	<p id="output"></p>
 </body>
@@ -22,7 +22,7 @@
 		font-family: 'Segoe UI';
 		border-width: 0px;
 		border-bottom: 2px solid #ffffff;
-		width: 500px;
+		width: 90%;
 		display: block;
 		outline-width: 0;
 	}
@@ -42,7 +42,7 @@
 
 	p {
 		font-size: 30px;
-		font-family: 'Consolas';
+		font-family: 'Consolas', monospace;
 		color: #ffffff;
 	}
 
@@ -82,7 +82,7 @@
 		if (value != '') {
 			if (BigInt(value) >= (10n ** 16n) && BigInt(value) < (10n ** 19n)) {
 				document.querySelector('label').style.color = '#ffffff';
-				document.querySelector('label').innerHTML = 'Snowflake';
+				document.querySelector('label').innerHTML = 'Discord Snowflake';
 				const unixValue = Number((BigInt(value) >> 22n) + 1420070400000n);
 				const dateValue = new Date(unixValue);
 				if (unixValue < Date.now()) {
@@ -97,7 +97,7 @@
 			}
 		} else {
 			document.querySelector('label').style.color = '#ffffff';
-			document.querySelector('label').innerHTML = 'Snowflake';
+			document.querySelector('label').innerHTML = 'Discord Snowflake';
 			document.getElementById('output').innerHTML = '';
 		}
 	}
