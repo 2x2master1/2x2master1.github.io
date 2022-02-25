@@ -145,3 +145,4 @@ function calcSnowflakeDifference(snowflake1, snowflake2) {
 	const unix2 = Number((BigInt(snowflake2) >> 22n) + 1420070400000n);
 	return unix2 - unix1;
 }
+
