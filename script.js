@@ -8,8 +8,9 @@ document.getElementById('snowflakeField').addEventListener('input', (event) => {
 })
 
 function calcSnowfl() {
+	let value;
 	try {
-		const value = BigInt(document.getElementById('snowflakeField').value);
+		value = BigInt(document.getElementById('snowflakeField').value);
 	} catch (error) {
 		value = null;
 		console.log(error);
