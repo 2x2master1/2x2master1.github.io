@@ -8,10 +8,14 @@ document.getElementById('snowflakeField').addEventListener('input', (event) => {
 })
 
 function calcSnowfl() {
-	const value = parseInt(document.getElementById('snowflakeField').value);
+	try {
+		const value = BigInt(document.getElementById('snowflakeField').value);
+	} catch (error) {
+		value = null;
+		console.log(error);
+	}
 	if (value) {
-		console.log(value)
-		if (BigInt(value) >= (10n ** 16n) && BigInt(value) < (10n ** 19n)) {
+		if (value >= (10n ** 16n) && value < (10n ** 19n)) {
 			document.querySelector('label').style.color = '#ffffff';
 			document.querySelector('label').innerHTML = 'Discord Snowflake';
 			const unixValue = Number((BigInt(value) >> 22n) + 1420070400000n);
