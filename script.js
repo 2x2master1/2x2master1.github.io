@@ -9,7 +9,7 @@ document.getElementById('snowflakeField').addEventListener('input', (event) => {
 
 function calcSnowfl() {
 	const value = parseInt(document.getElementById('snowflakeField').value);
-	if (value != '') {
+	if (value) {
 		console.log(value)
 		if (BigInt(value) >= (10n ** 16n) && BigInt(value) < (10n ** 19n)) {
 			document.querySelector('label').style.color = '#ffffff';
