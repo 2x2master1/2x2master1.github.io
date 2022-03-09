@@ -39,17 +39,8 @@ function calcSnowfl() {
 }
 
 function refreshButton() {
-	sessionStorage.setItem('lastId', document.getElementById('snowflakeField').value);
-	window.location.reload();
-}
-
-window.addEventListener('load', () => {
-	var storedData = sessionStorage.getItem('lastId');
-	if (!storedData) return;
-	document.getElementById('snowflakeField').value = storedData;
-	sessionStorage.removeItem('lastId');
 	calcSnowfl();
-})
+}
 
 function pad(inputStr, length, padChar) {
 	if (typeof inputStr === "number") inputStr = inputStr.toString();
