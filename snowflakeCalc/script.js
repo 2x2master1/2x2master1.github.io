@@ -140,5 +140,5 @@ function calcSnowflakeDifference(snowflake1, snowflake2) {
 	if (typeof snowflake1 !== 'string' || !snowflake1.match(/^\d{17,19}$/) || typeof snowflake2 !== 'string' || !snowflake2.match(/^\d{17,19}$/)) return undefined;
 	const unix1 = Number((BigInt(snowflake1) >> 22n) + 1420070400000n);
 	const unix2 = Number((BigInt(snowflake2) >> 22n) + 1420070400000n);
-	return unix2 - unix1;
+	return Math.abs(unix2 - unix1);
 }
