@@ -27,6 +27,12 @@ span.small {
 	font-size: 21px;
 }
 
+@media screen and (min-width: 708px) {
+	#output br:not(br.uo) {
+		display: none;
+	}
+}
+
 button {
 	background-color: transparent;
 	color: #ffffff;
