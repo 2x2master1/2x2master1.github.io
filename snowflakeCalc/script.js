@@ -22,9 +22,9 @@ function calcSnowfl() {
 			const unixValue = Number((BigInt(value) >> 22n) + 1420070400000n);
 			const dateValue = new Date(unixValue);
 			if (unixValue < Date.now()) {
-				document.getElementById('output').innerHTML = `${formatDate(dateValue)}<br><br>${msToTimeString(Math.abs(Date.now() - unixValue))} (${((Date.now() - unixValue) / 24 / 60 / 60 / 1000).toFixed(2)}&nbsp;days)&nbsp;ago |&nbsp;<button id="refreshButton" onclick="refreshButton()">Refresh</button><br><br>Unix&nbsp;timestamp: ${(unixValue / 1000).toFixed(0)}`
+				document.getElementById('output').innerHTML = `${formatDate(dateValue)}<br class="uo"><br class="uo">${msToTimeString(Math.abs(Date.now() - unixValue))} <br>(${((Date.now() - unixValue) / 24 / 60 / 60 / 1000).toFixed(2)} days) ago <br>| <button id="refreshButton" onclick="refreshButton()">Refresh</button><br class="uo"><br class="uo">Unix timestamp: <br>${(unixValue / 1000).toFixed(0)}`
 			} else {
-				document.getElementById('output').innerHTML = `${formatDate(dateValue)}<br><br>in ${msToTimeString(Math.abs(unixValue - Date.now()))} (${((unixValue - Date.now()) / 24 / 60 / 60 / 1000).toFixed(2)}&nbsp;days) |&nbsp;<button id="refreshButton" onclick="refreshButton()">Refresh</button><br><br>Unix&nbsp;timestamp: ${(unixValue / 1000).toFixed(0)}`
+				document.getElementById('output').innerHTML = `${formatDate(dateValue)}<br class="uo"><br class="uo">in ${msToTimeString(Math.abs(unixValue - Date.now()))} <br>(${((unixValue - Date.now()) / 24 / 60 / 60 / 1000).toFixed(2)} days) <br>| <button id="refreshButton" onclick="refreshButton()">Refresh</button><br class="uo"><br class="uo">Unix timestamp: <br>${(unixValue / 1000).toFixed(0)}`
 			}
 		} else {
 			document.querySelector('label').style.color = '#ff0000';
@@ -69,11 +69,11 @@ const monthsStringMap = {
 function formatDate(date) {
 	var result =
 		pad(date.getDate(), 2, '0') +
-		'&nbsp;' +
+		' ' +
 		monthsStringMap[date.getMonth() + 1] +
-		'&nbsp;' +
+		' ' +
 		pad(date.getFullYear(), 4, '0') +
-		'&nbsp;- ' +
+		' <br>- ' +
 		pad(date.getHours(), 2, '0') +
 		':' +
 		pad(date.getMinutes(), 2, '0') +
@@ -119,7 +119,7 @@ function msToTimeString(time) {
 		if (ctime >= 1) {
 			if (2 < ++count) break;
 			ctime = Math.floor(ctime);
-			timeStr += `${ctime}&nbsp;${fullTimeUnitNames[key] + (ctime !== 1 ? 's' : '')} `;
+			timeStr += `${ctime}<span style="white-space: nowrap;"> </span>${fullTimeUnitNames[key] + (ctime !== 1 ? 's' : '')} `;
 			time -= ctime * timeUnitValues[key];
 		}
 	}
