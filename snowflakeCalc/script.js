@@ -81,9 +81,9 @@ function formatDate(date) {
 		pad(date.getSeconds(), 2, '0') +
 		'<span class="small">.' +
 		pad(date.getMilliseconds(), 3, '0') +
-		'</span> ' +
+		'</span>' +
 	    	(date.getTimezoneOffset > 0 ? '-' : '+') +
-		Math.abs(date.getTimezoneOffset / 60).toString();
+		Math.abs(date.getTimezoneOffset() / 60).toString();
 	return result;
 }
 
