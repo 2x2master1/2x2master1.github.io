@@ -2,7 +2,7 @@ input {
 	background-color: #2d2d2d;
 	color: #ffffff;
 	font-size: 30px;
-	font-family: 'Segoe UI';
+	font-family: 'Segoe UI', Arial, sans-serif;
 	border-width: 0px;
 	border-bottom: 2px solid #ffffff;
 	width: 90%;
@@ -13,7 +13,7 @@ input {
 label {
 	float: left;
 	font-size: 150%;
-	font-family: 'Segoe UI';
+	font-family: 'Segoe UI', Arial, sans-serif;
 	color: #ffffff;
 }
 
@@ -37,7 +37,7 @@ button {
 	background-color: transparent;
 	color: #ffffff;
 	font-size: 30px;
-	font-family: 'Consolas';
+	font-family: 'Consolas', monospace;
 	border: 1px solid #ffffff;
 }
 
